@@ -1,0 +1,673 @@
+html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: Raleway, sans-serif;
+    margin-top: 0px;
+}
+
+img {
+    border: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+/*** ----------------------------------------------------------------- ***/
+/*** -------------------------- Header ------------------------------- ***/
+/*** ----------------------------------------------------------------- ***/
+
+.header {
+    grid-template-columns: auto 1fr auto auto;
+    grid-template-areas: "logo . navbar button";
+    display: grid;
+    align-items: center;
+    max-width: 1440px;
+    margin: auto;
+}
+
+.header_img {
+    grid-area: logo;
+    padding: 0 2rem;
+    height: 2.813rem;
+}
+
+.header_nav {
+    display: flex;
+    align-items: center;
+    grid-area: navbar;
+}
+
+.header_nav_link {
+    padding: 2rem;
+    font-weight: 500;
+    text-align: center;
+    transition-duration: 0.1s;
+    border-top: 3px transparent solid;
+    border-bottom: 3px transparent solid;
+}
+
+.header_nav_link:hover {
+    color: #0065FC;
+}
+
+.header_nav_link[data-active="true"] {
+    color: #0065FC;
+}
+
+.header_signup {
+    display: flex;
+    align-items: center;
+    grid-area: button;
+    padding: 2rem;
+    color: #0065FC;
+    font-weight: 600;
+}
+
+@media screen and (min-width: 601px) {
+    .header {
+        grid-template-columns: auto 1fr auto auto;
+        grid-template-areas: "logo . navbar button";
+    }
+    .header_nav_link[data-active=true] {
+        border-top: 3px solid #0065FC;
+    }
+    .header_nav_link:hover {
+        border-top: 3px solid #0065FC;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .header {
+        grid-template-columns: auto 1fr auto;
+        grid-template-areas: "logo . button" "navbar navbar navbar";
+    }
+    .header_img {
+        order: 0;
+    }
+    .header_signup {
+        order: 1;
+    }
+    .header_nav {
+        order: 2;
+    }
+    .header_nav_link {
+        border-top: none;
+        border-bottom: 3px solid #F2F2F2;
+        width: 50%;
+    }
+    .header_nav_link[data-active=true] {
+        border-bottom-color: #0065FC;
+    }
+    .header_nav_link:hover {
+        border-bottom-color: #0065FC;
+    }
+}
+
+/*** ----------------------------------------------------------------- ***/
+/*** ------------------------------ Main ----------------------------- ***/
+/*** ----------------------------------------------------------------- ***/
+
+.main {
+    max-width: 1440px;
+    margin: auto;
+    padding: 0 2rem;
+    box-sizing: border-box;
+}
+
+main {
+    display: block;
+}
+
+/*** ----------------------------------------------------------------- ***/
+/*** ----------------------------- Search ---------------------------- ***/
+/*** ----------------------------------------------------------------- ***/
+
+.header_search_title {
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 2em;
+    margin: .67em 0;
+}
+
+.header_search_subtitle {
+    margin-top: 0;
+}
+
+.form_search {
+    display: inline-flex;
+    max-width: 100%;
+    overflow: auto;
+}
+
+.form_search_icon {
+    background-color: #F2F2F2;
+    padding: 1rem 1.25rem;
+    border-radius: 1rem 0 0 1rem;
+    text-align: center;
+}
+
+.form_search_ICON {
+    margin-left: 0.1rem;
+}
+
+.form_search_input {
+    border-right: none;
+    border-left: none;
+    border-top: #F2F2F2 1px solid;
+    border-bottom: #F2F2F2 1px solid;
+    padding: 0 1.5rem;
+    box-sizing: border-box;
+    width: 14rem;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: Raleway, sans-serif;
+}
+
+[type="search"] {
+    -webkit-appearance: textfield;
+    outline-offset: -2px;
+}
+
+button, input {
+    overflow: visible;
+}
+
+.form_search_submit {
+    background-color: #0065FC;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 0 1rem 1rem 0;
+    padding: 0 1.5rem;
+    font-family: Raleway, sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+[type="button"], [type="reset"], [type="submit"], button {
+    -webkit-appearance: button;
+}
+
+button, select {
+    text-transform: none;
+}
+
+.form_search_submit_text {
+    display: block;
+}
+
+@media screen and (max-width: 600px) {
+    .form_search {
+        display: flex;
+        width: 100%;
+    }
+    .form_search_input {
+        flex: 1;
+    }
+    .form_search_submit_text {
+        display: none;
+    }
+    .submit_search_ICON {
+        display: block;
+    }
+    .form_search_submit {
+        background-color: #0065FC;
+        color: white;
+        font-weight: bold;
+        border: none;
+        border-radius: 1rem 1rem 1rem 1rem;
+        padding: 0 1.5rem;
+        font-family: Raleway, sans-serif;
+        font-size: 1rem;
+        cursor: pointer;
+    }
+}
+
+@media screen and (min-width: 601px) {
+    .form_search_submit_text {
+        display: block;
+    }
+    .submit_search_ICON {
+        display: none !important;
+    }
+}
+
+/*** ----------------------------------------------------------------- ***/
+/*** ------------------------- Search Filter ------------------------- ***/
+/*** ----------------------------------------------------------------- ***/
+
+.search_filter {
+    display: flex;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.search_filter_titre {
+    margin: 0 2rem 1rem 0;
+    display: flex;
+    align-items: center;
+}
+
+.search_FILTER {
+    display: flex;
+    align-items: center;
+    margin-right: 2rem;
+    border: 2px solid #d9d9d9;
+    border-radius: 2rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition-duration: 0.1s;
+    font-weight: bold;
+}
+
+.search_FILTER:hover {
+    background-color: #f3f8ff;
+    transform: scale(1.015);
+}
+
+.search_filter_icon {
+    background-color: #DEEBFF;
+    border-radius: 100%;
+    height: 3rem;
+    width: 3rem;
+    min-height: 3.5rem;
+    min-width: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: -2px;
+}
+
+.search_filter_ICON {
+    color: blue;
+}
+
+.search_FILTER_titre {
+    margin: 0 1rem;
+}
+
+@media screen and (max-width: 650px) {
+
+    .search_filter_titre {
+        width: 100%;
+    }
+
+    .search_FILTER {
+        flex-wrap: wrap;
+        margin-right: 0;
+    }
+
+    .main {
+        padding: 0;
+    }
+
+}
+
+/*** ----------------------------------------------------------------- ***/
+/*** ------------------------ Search Result -------------------------- ***/
+/*** ----------------------------------------------------------------- ***/
+
+.search_result {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0 2rem 0;
+}
+
+.search_result_icon {
+    height: 2rem;
+    width: 2rem;
+    min-height: 2rem;
+    min-width: 2rem;
+    border: solid 1px #d9d9d9;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+}
+
+.search_result_ICON {
+    color: #0065FC;
+}
+
+.search_result_text {
+    margin: 0;
+}
+
+
+/*** ----------------------------------------------------------------- ***/
+/*** ---------------------------- Hébergements --------------------------- ***/
+/*** ----------------------------------------------------------------- ***/
+
+.hébergements {
+    display: grid;
+    column-gap: 2rem;
+    grid-template-columns: 6fr 3fr;
+}
+
+.hebergements_main {
+    display: grid;
+    column-gap: 2rem;
+    row-gap: 2rem;
+}
+
+.hebergements_main_header {
+    grid-column: 1/-1;
+}
+
+.hebergements_main_header_title {
+    margin: 0;
+}
+
+.hebergements_main_card {
+    background-color: white;
+    padding: 0.375rem;
+    border-radius: 1.25rem;
+    box-shadow: 0 0 16px #0000002e;
+    transition-duration: 0.1s;
+    cursor: pointer;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.hebergements_main_card:hover {
+    transform: scale(1.02);
+}
+
+.hebergements_main_card_figure {
+    margin: 0;
+}
+
+.hebergements_main_card_figure_img {
+    height: 7rem;
+    object-fit: cover;
+    max-width: 100%;
+    width: 100%;
+    max-height: 100%;
+    border-radius: 1rem 1rem 0 0;
+}
+
+.hebergements_main_card_figure_caption_title {
+    margin: 0.25rem 0.75rem 0 0.75rem;
+}
+
+.hebergements_main_card_desc {
+    margin: 0.25rem 0.75rem 0.25rem 0.75rem;
+}
+
+/* .hebergements_main_card_desc_price {
+    font-weight: bold;
+} */
+
+.hebergements_main_card_grade {
+    margin: 0 0.75rem 0.25rem 0.75rem;
+}
+
+.hebergements_main_card_grade_icon[data-active=true] {
+    color: #0065FC;
+}
+
+.hebergements_main_card_grade_icon[data-active=false] {
+    color: #f2f2f2;
+}
+
+.hebergements_main_viewmore {
+    font-weight: bold;
+}
+
+.hebergements_wrap, .hebergements_popular, .hebergements_main {
+    background-color: #F2F2F2;
+    border-radius: 1.5rem;
+    padding: 2rem;
+}
+
+/*** ----------------------------------------------------------------- ***/
+/*** --------------------------- Populaire --------------------------- ***/
+/*** ----------------------------------------------------------------- ***/
+
+.hebergements_popular {
+    display: grid;
+    row-gap: 2rem;
+    align-items: start;
+    grid-template-rows: auto repeat(3, 1fr);
+}
+
+.hebergements_popular_title {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.hebergements_popular_wrapcontent {
+    display: flex;
+    align-items: stretch;
+    height: 100%;
+    overflow: auto;
+}
+
+.hebergements_popular_wrapcontent_img {
+    position: relative;
+    min-height: 100%;
+    width: 33%;
+    min-width: 33%;
+    max-width: 33%;
+}
+
+.hebergements_popular_wrapcontent_IMG {
+    border-radius: 1rem 0 0 1rem;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hebergements_popular_wrap_Content {
+    display: flex;
+    flex-direction: column;
+}
+
+.hebergements_popular_wrap_Content_espace {
+    flex: 1;
+}
+
+.hebergements_popular_main {
+    height: 8.75rem;
+}
+
+/*** ----------------------------------------------------------------- ***/
+/*** ------------------------- media queries ------------------------- ***/
+/*** ----------------------------------------------------------------- ***/
+
+@media (max-width: 1439px) {
+    .hébergements {
+        grid-template-columns: 1fr;
+        row-gap: 2rem;
+    }
+    .hebergements_popular {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto 10rem;
+        column-gap: 2rem;
+        grid-row-start: 1;
+    }
+    .hebergements_popular_title {
+        grid-column: 1/-1;
+    }
+}
+
+@media (min-width: 925px) {
+    .hebergements_main {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 925px) and (min-width: 650px) {
+    .hebergements_main {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+    .hebergements_main {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 1000px) {
+    .hebergements_popular {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto repeat(3, 9rem);
+    }
+}
+/*** ----------------------------------------------------------------- ***/
+/*** ---------------------------- Activité --------------------------- ***/
+/*** ----------------------------------------------------------------- ***/
+
+.activite_card {
+    box-shadow: 0 0 20px #0000002e;
+    border-radius: 1rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition-duration: 0.1s;
+}
+
+.activite_card:hover {
+    transform: scale(1.01);
+}
+
+.activite_card_img {
+    position: relative;
+    flex: 1;
+}
+
+.activite_card_IMG {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.activités {
+    display: grid;
+    column-gap: 2rem;
+    margin: 4rem 0;
+}
+
+.activite_card_titre {
+    margin: 1.2rem 1.5rem;
+}
+
+@media (min-width: 1100px) {
+    .activités {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto 14rem 2rem 2rem 2rem 14rem;
+    }
+    .activite_card1 {
+        grid-row: 2/7;
+        grid-column: 1/2;
+    }
+    .activite_card2 {
+        grid-column: 2/3;
+        grid-row: 2/5;
+    }
+    .activite_card3 {
+        grid-column: 3/4;
+        grid-row: 2/7;
+    }
+    .activite_card4 {
+        grid-column: 4/5;
+        grid-row: 2/3;
+    }
+    .activite_card5 {
+        grid-column: 2/3;
+        grid-row: 6/7;
+    }
+    .activite_card6 {
+        grid-column: 4/5;
+        grid-row: 4/7;
+    }
+}
+
+@media (max-width: 1100px) {
+    .activités {
+        row-gap: 2rem;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 12rem 12rem 12rem;
+    }
+}
+
+@media (max-width: 925px) {
+    .activités {
+        row-gap: 2rem;
+        grid-template-columns: repeat(2, 1fr);
+        /*grid-template-rows: 12rem 12rem 12rem 12rem;*/
+    }
+}
+
+@media (max-width: 650px) {
+    .activités {
+        row-gap: 2rem;
+        grid-template-columns: 1fr;
+        grid-template-rows: 12rem 12rem 12rem 12rem 12rem 12rem;
+    }
+}
+/*** ----------------------------------------------------------------- ***/
+/*** ------------------------------ Footer --------------------------- ***/
+/*** ----------------------------------------------------------------- ***/
+
+.footer {
+    background-color: #F2F2F2;
+    width: 100%;
+}
+
+.footer_block {
+    display: flex;
+    max-width: 100%;
+    width: 1440px;
+    margin: auto;
+    padding: 0 2rem;
+    box-sizing: border-box;
+}
+
+.footer_colonne {
+    width: 30%;
+    padding: 2rem 2rem;
+}
+
+.footer_link {
+    display: block;
+    margin: 1rem 0;
+}
+
+@media (max-width: 750px) {
+    .footer_block {
+        flex-direction: column;
+        padding: 2rem;
+    }
+    .footer_colonne {
+        width: 100%;
+        padding: 0;
+        margin: 1rem 0;
+    }
+    .footer_colonne:first-child {
+        margin-top: 0;
+    }
+    .footer_colonne:last-child {
+        margin-bottom: 0;
+    }
+    .footer_colonne_title {
+        margin: 0;
+    }
+    .footer_link:last-child {
+        margin-bottom: 0;
+    }
+}
